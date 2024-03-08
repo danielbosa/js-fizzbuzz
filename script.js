@@ -40,13 +40,12 @@ for(let i = 1; i <= numBox; i++){
         text = i;
     }
     tempHtml += `
-    <div class="box d-flex justify-content-center align-items-center ${colorClass}">
+    <div class="box d-flex justify-content-center align-items-center text-break text-center ${colorClass}">
             ${text}
         </div>
     `
 };
 
 squareWrapper.innerHTML = tempHtml;
-
 const container = document.querySelector('.container');
 container.append(squareWrapper);
