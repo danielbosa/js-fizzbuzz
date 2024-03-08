@@ -24,18 +24,23 @@ squareWrapper.className = 'd-flex flex-wrap justify-content-between m-auto max-w
 let numBox = 100;
 let tempHtml = '';
 let text = '';
+let colorClass = '';
 
-for(let i = 1; i < numBox; i++){
-    if ((i % 3 == 0) && (i % 5 == 0))
-    text = 'FizzBuzz';
-    else if (i % 3 == 0)
-    text = 'Fizz';
-    else if (i % 5 == 0)
-    text = 'Buzz';
-    else
-    text = i;
+for(let i = 1; i <= numBox; i++){
+    if ((i % 3 == 0) && (i % 5 == 0)){
+        text = 'FizzBuzz';
+        colorClass = 'fizzbuzz';
+    } else if (i % 3 == 0){
+        text = 'Fizz';
+        colorClass = 'fizz';
+    } else if (i % 5 == 0){
+        text = 'Buzz';
+        colorClass = 'buzz';
+    } else {
+        text = i;
+    }
     tempHtml += `
-    <div class="box d-flex justify-content-center align-items-center fizz">
+    <div class="box d-flex justify-content-center align-items-center ${colorClass}">
             ${text}
         </div>
     `
@@ -43,6 +48,5 @@ for(let i = 1; i < numBox; i++){
 
 squareWrapper.innerHTML = tempHtml;
 
-console.dir(squareWrapper);
 const container = document.querySelector('.container');
 container.append(squareWrapper);

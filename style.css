@@ -3,24 +3,31 @@
 }
 
 .box{
-    width: calc(100% / 7 - 5px);
+    width: calc(100% / 7 - 10px);
     aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
 }
 
 .fizz{
-    background-color: black;
-    color: white;
+    background-color: blue;
+    color: orange;
+    border: 2px solid orange;
 }
 
 .buzz{
-    background-color: white;
-    color: black;
+    background-color: gold;
+    color: blue;
+    border: 2px solid blue;
 }
 
 .fizzbuzz{
     background-color: greenyellow;
     color: red;
+    border: 2px solid rgb(1, 83, 1);
 }
