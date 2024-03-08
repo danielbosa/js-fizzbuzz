@@ -3,13 +3,46 @@
 // Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
 
 
-for (let i = 1; i < 100; i++){
+
+//For Cycle - to get number or string
+// for (let i = 1; i < 100; i++){
+//     if ((i % 3 == 0) && (i % 5 == 0))
+//     i = 'FizzBuzz';
+//     else if (i % 3 == 0)
+//     i = 'Fizz';
+//     else if (i % 5 == 0)
+//     i = 'Buzz';
+//     else
+//     i === i;
+// };
+
+const squareWrapper = document.createElement('div');
+squareWrapper.setAttribute('id', 'board');
+squareWrapper.className = 'd-flex flex-wrap justify-content-between m-auto max-width-900';
+
+
+let numBox = 100;
+let tempHtml = '';
+let text = '';
+
+for(let i = 1; i < numBox; i++){
     if ((i % 3 == 0) && (i % 5 == 0))
-    console.log('FizzBuzz');
+    text = 'FizzBuzz';
     else if (i % 3 == 0)
-    console.log('Fizz');
+    text = 'Fizz';
     else if (i % 5 == 0)
-    console.log('Buzz');
+    text = 'Buzz';
     else
-    console.log (i);
+    text = i;
+    tempHtml += `
+    <div class="box d-flex justify-content-center align-items-center fizz">
+            ${text}
+        </div>
+    `
 };
+
+squareWrapper.innerHTML = tempHtml;
+
+console.dir(squareWrapper);
+const container = document.querySelector('.container');
+container.append(squareWrapper);

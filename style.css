@@ -1,0 +1,26 @@
+.max-width-900{
+    max-width: 900px;
+}
+
+.box{
+    width: calc(100% / 7 - 5px);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fizz{
+    background-color: black;
+    color: white;
+}
+
+.buzz{
+    background-color: white;
+    color: black;
+}
+
+.fizzbuzz{
+    background-color: greenyellow;
+    color: red;
+}
