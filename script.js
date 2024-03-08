@@ -1,31 +1,27 @@
-//Scrivi un programma che stampi in console i numeri da 1 a 100,
-// ma che per i multipli di 3 stampi “Fizz” al posto del numero e per i multipli di 5 stampi “Buzz”.
-// Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
-
-
-
-//For Cycle - to get number or string
-// for (let i = 1; i < 100; i++){
-//     if ((i % 3 == 0) && (i % 5 == 0))
-//     i = 'FizzBuzz';
-//     else if (i % 3 == 0)
-//     i = 'Fizz';
-//     else if (i % 5 == 0)
-//     i = 'Buzz';
-//     else
-//     i === i;
-// };
-
+//dichiaro costante e la assegno ad un elemento div creato in js
 const squareWrapper = document.createElement('div');
+
+//setto l'id 
 squareWrapper.setAttribute('id', 'board');
-squareWrapper.className = 'd-flex flex-wrap justify-content-start m-auto max-width-900';
 
+//attribuisco classi
+squareWrapper.className = 'd-flex flex-wrap justify-content-start m-auto mb-5 py-5 max-width-900';
 
+//dichiaro variabili
+//per limite di cicli
 let numBox = 100;
+
+//scatola in cui inserire stringa generata da ciclo, senza inserirlo subito in pagina html --> se no, ricaricherebbe ogni volta la pagina
 let tempHtml = '';
+//scatola in cui inserire il testo da stampare
 let text = '';
+
+//scatola in cui inserire class con cui attribuire proprietà tramite css
 let colorClass = '';
 
+//ciclo for
+//cicla da 1 a 100
+//ad ogni ciclo verifica le condizioni da rispettare per valorizzare relativamente le variabili text e colorClass
 for(let i = 1; i <= numBox; i++){
     if ((i % 3 == 0) && (i % 5 == 0)){
         text = 'FizzBuzz';
@@ -40,13 +36,17 @@ for(let i = 1; i <= numBox; i++){
         text = i;
         colorClass = ''
     }
+    //nella scatola inserisco la stringa con i valori derivanti dal ciclo SENZA SOVRASCRIVERE: la aggiungo. Così ho tutti i div, da 1 a 100.
     tempHtml += `
     <div class="box d-flex justify-content-center align-items-center text-break text-center ${colorClass}">
             ${text}
-        </div>
+    </div>
     `
 };
 
+//inserisco la scatola con i div nella scatola che poi inserisco in html
 squareWrapper.innerHTML = tempHtml;
+//seleziono il container in html in cui inserire la scatola squareWrapper
 const container = document.querySelector('.container');
+//inserisco scatola in html
 container.append(squareWrapper);
