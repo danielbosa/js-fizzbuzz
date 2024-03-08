@@ -18,7 +18,7 @@
 
 const squareWrapper = document.createElement('div');
 squareWrapper.setAttribute('id', 'board');
-squareWrapper.className = 'd-flex flex-wrap justify-content-between m-auto max-width-900';
+squareWrapper.className = 'd-flex flex-wrap justify-content-start m-auto max-width-900';
 
 
 let numBox = 100;
@@ -38,6 +38,7 @@ for(let i = 1; i <= numBox; i++){
         colorClass = 'buzz';
     } else {
         text = i;
+        colorClass = ''
     }
     tempHtml += `
     <div class="box d-flex justify-content-center align-items-center text-break text-center ${colorClass}">
